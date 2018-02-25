@@ -14,7 +14,7 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
     x: 0
-    y: 43
+    y: 44
     width: 1280
     height: 637
   m_ShowMode: 4
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 887, y: 492}
   m_MaxSize: {x: 16012, y: 14042}
   vertical: 0
-  controlID: 75
+  controlID: 102
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 492}
   m_MaxSize: {x: 12010, y: 14042}
   vertical: 1
-  controlID: 76
+  controlID: 103
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 221}
   m_MaxSize: {x: 12010, y: 4021}
   vertical: 0
-  controlID: 77
+  controlID: 104
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 1005
-    y: 92
+    y: 94
     width: 275
     height: 566
   m_PersistentViewDataDictionary: {fileID: 0}
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 408
+    y: 410
     width: 1001
     height: 250
   m_PersistentViewDataDictionary: {fileID: 0}
@@ -463,13 +463,13 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\lindat18\Google Drive\2017-2018\2017-2018\0gamedev\Towers
+  m_LastProjectPath: /Users/XuMan/Documents/Towers
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: bc280000
-    m_LastClickedID: 10428
-    m_ExpandedIDs: bc28000000ca9a3bffffff7f
+    m_SelectedIDs: 7e270000
+    m_LastClickedID: 10110
+    m_ExpandedIDs: 000000007e27000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -497,7 +497,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 000000007e270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300002887000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 92
+    y: 94
     width: 200
     height: 295
   m_PersistentViewDataDictionary: {fileID: 0}
@@ -617,7 +617,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: cef9ffff00000000
+    m_ExpandedIDs: 22fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -663,7 +663,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 204
-    y: 92
+    y: 94
     width: 280
     height: 295
   m_PersistentViewDataDictionary: {fileID: 0}
@@ -740,7 +740,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 488
-    y: 92
+    y: 94
     width: 513
     height: 295
   m_PersistentViewDataDictionary: {fileID: 0}
@@ -752,10 +752,10 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -256.5
-    m_HBaseRangeMax: 256.5
-    m_VBaseRangeMin: -139
-    m_VBaseRangeMax: 139
+    m_HBaseRangeMin: -128.25
+    m_HBaseRangeMax: 128.25
+    m_VBaseRangeMin: -69.5
+    m_VBaseRangeMax: 69.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -774,7 +774,7 @@ MonoBehaviour:
       y: 17
       width: 513
       height: 278
-    m_Scale: {x: 1, y: 1}
+    m_Scale: {x: 2, y: 2}
     m_Translation: {x: 256.5, y: 139}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -782,15 +782,15 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -256.5
-      y: -139
-      width: 513
-      height: 278
+      x: -128.25
+      y: -69.5
+      width: 256.5
+      height: 139
     m_MinimalGUI: 1
-  m_defaultScale: 1
+  m_defaultScale: 2
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 513, y: 295}
+  m_LastWindowPixelSize: {x: 1026, y: 590}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
