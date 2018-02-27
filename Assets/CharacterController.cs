@@ -11,8 +11,6 @@ public class CharacterController : MonoBehaviour {
 
     Rigidbody body;
 
-    private bool canJump = true; //bool to ensure you only jump as landing back down
-
 	// Use this for initialization
 	void Start () {
         if (GetComponent<Rigidbody>()) //init ridigbody
@@ -36,14 +34,11 @@ public class CharacterController : MonoBehaviour {
     }
 
     private void handleJump(){
-        if(canJump){
-            if (Input.GetKey("space"))
-            {
-                body.velocity += new Vector3(0, jumpVelocity, 0);
-                canJump = false;
-            }
-        }else{
-            canJump = Physics.Raycast(transform.position, Vector3.down, 0.5f); //check for landing; might have to change 0.5f to new radius
+
+        if (Input.GetKey("space") && Physics.Raycast(transform.position, Vector3.down, 0.5f)) //check for landing; might have to change 0.5f to new radius)
+        {
+            body.velocity += new Vector3(0, jumpVelocity, 0);
+
         }
     }
 
@@ -51,6 +46,5 @@ public class CharacterController : MonoBehaviour {
     {
         transform.position = startPos;
         body.velocity = Vector3.zero;
-        canJump = true;
     }
 }

@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{7F6073FF-394B-0873-37BC-2A28613CC54F}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/EndGameChecker.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CharacterController.cs">
     <Files>
       <File FileName="Assets/CharacterController.cs" Line="10" Column="12" />
-      <File FileName="Assets/TowersScript.cs" Line="63" Column="6" />
+      <File FileName="Assets/TowersScript.cs" Line="63" Column="10" />
       <File FileName="Assets/CameraMovementScript.cs" Line="12" Column="32" />
-      <File FileName="Assets/EndGameChecker.cs" Line="14" Column="3" />
+      <File FileName="Assets/EndGameChecker.cs" Line="16" Column="65" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
