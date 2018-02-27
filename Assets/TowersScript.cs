@@ -16,12 +16,11 @@ public class TowersScript : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        initPlatforms();
+        InitPlatforms();
     }
 
-    private void initPlatforms(){
+    private void InitPlatforms(){
         platformList = new List<GameObject>();
-
         for (int i = 0; i < poolSize; i++)
         {
             GameObject obj = (GameObject)Instantiate(platform);
@@ -32,10 +31,10 @@ public class TowersScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        handleObjectPooling();
+        HandleObjectPooling();
 	}
 
-    private void handleObjectPooling(){
+    private void HandleObjectPooling(){
         for (int i = 0; i < poolSize; i++)
         {
             if (!platformList[i].activeInHierarchy)
@@ -57,15 +56,15 @@ public class TowersScript : MonoBehaviour {
         }
     }
 
-    private void removePlatforms(){
+    private void RemovePlatforms(){
         for (int i = 0; i < poolSize; i++){
             Destroy(platformList[i]);
         }
     }
 
-    public void reset(){
-        removePlatforms();
-        initPlatforms();
+    public void Reset(){
+        RemovePlatforms();
+        InitPlatforms();
         posZ = 0;
     }
 }
