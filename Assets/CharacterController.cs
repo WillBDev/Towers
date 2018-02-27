@@ -26,16 +26,16 @@ public class CharacterController : MonoBehaviour {
 	// FixedUpdate is called once per physics-frame
 	void FixedUpdate () {
         body.velocity = new Vector3(0, body.velocity.y, 0);
-        handleJump();
-        handleMovement();
+        HandleJump();
+        HandleMovement();
 	}
 
-    private void handleMovement(){
+    private void HandleMovement(){
         body.velocity += transform.forward * Input.GetAxis("Vertical") * speed;
         body.velocity += transform.right * Input.GetAxis("Horizontal") * speed;
     }
 
-    private void handleJump(){
+    private void HandleJump(){
         if(canJump){
             if (Input.GetKey("space"))
             {
@@ -47,7 +47,7 @@ public class CharacterController : MonoBehaviour {
         }
     }
 
-    public void reset()
+    public void Reset()
     {
         transform.position = startPos;
         body.velocity = Vector3.zero;
