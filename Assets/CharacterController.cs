@@ -13,6 +13,9 @@ public class CharacterController : MonoBehaviour {
 
     private bool canJump = true; //bool to ensure you only jump as landing back down
 
+    public AudioClip jumpSound;
+    public AudioSource jumpSoundSource;
+
 	// Use this for initialization
 	void Start () {
         if (GetComponent<Rigidbody>()) //init ridigbody
@@ -21,6 +24,9 @@ public class CharacterController : MonoBehaviour {
             Debug.LogError("no rigidbody attached");
 
         transform.position = startPos;
+
+        jumpSoundSource.clip = jumpSound;
+
 	}
 	
 	// FixedUpdate is called once per physics-frame
@@ -41,6 +47,7 @@ public class CharacterController : MonoBehaviour {
             {
                 body.velocity += new Vector3(0, jumpVelocity, 0);
                 canJump = false;
+                jumpSoundSource.Play();
             }
         }else{
             canJump = Physics.Raycast(transform.position, Vector3.down, 0.5f); //check for landing; might have to change 0.5f to new radius
