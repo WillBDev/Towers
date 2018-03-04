@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ public class CameraMovementScript : MonoBehaviour
         }
         else //regular; move camera
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + flySpeed * Time.deltaTime);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + int.Parse(GameObject.Find("Score").GetComponent<UnityEngine.UI.Text>().text) * Time.deltaTime);
         }
     }
 

@@ -1,9 +1,8 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jam1", "jam1.csproj", "{6F97869C-830C-0991-5C8A-8E9455B8903D}"
+Project("{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1}") = "jam1", "jam1.csproj", "{6F97869C-830C-0991-5C8A-8E9455B8903D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jam1.Editor.Plugins", "jam1.Editor.Plugins.csproj", "{BD8F269E-F58D-B032-2F7D-BDE87917F2AF}"
+Project("{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1}") = "jam1.Editor.Plugins", "jam1.Editor.Plugins.csproj", "{BD8F269E-F58D-B032-2F7D-BDE87917F2AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
