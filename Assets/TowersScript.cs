@@ -4,17 +4,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class TowersScript : MonoBehaviour {
+public class TowersScript : MonoBehaviour
+{
 
     public GameObject platform;
 
     public int spreadHorizontal = 10;
     public int spreadVertical = 10;
     public int poolSize = 100;
+    public int platformDist = 15;
     private int score;
     List<GameObject> platformList;
+    List<Vector3> platformPositions;
 
-    int posZ = 0; //how far the level has been generated
+    int numGenerated = 0; //number of platforms generated
+
+    public int getNumGenerated(){
+        return numGenerated;
+    }
+
+    public List<Vector3> getPlatformPositions()
+    {
+        return platformPositions;
+    }
 
     // Use this for initialization
     void Start()
@@ -22,27 +34,32 @@ public class TowersScript : MonoBehaviour {
         InitPlatforms();
     }
 
-    private void InitPlatforms(){
+    private void InitPlatforms()
+    {
         platformList = new List<GameObject>();
+        platformPositions = new List<Vector3>();
         for (int i = 0; i < poolSize; i++)
         {
             GameObject obj = (GameObject)Instantiate(platform);
             obj.SetActive(false);
             platformList.Add(obj);
+
+            platformPositions.Add(getNextPosition());
         }
     }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update()
+    {
         HandleObjectPooling();
-	    UpdateScore();
-	}
+        UpdateScore();
+    }
 
     private void UpdateScore()
     {
         for (int i = 0; i < poolSize; i++)
         {
-            if (platformList[score].transform.position.z < GameObject.Find("Cube").transform.position.z - 5) // remove platform after player has gone 50units past it
+            if (platformList[score].transform.position.z < GameObject.Find("Cube").transform.position.z - 5) // remove platform after player has gone 5 units past it
             {
                 score++;
                 var scoreItem = GameObject.Find("Score").GetComponent<UnityEngine.UI.Text>();
@@ -51,14 +68,21 @@ public class TowersScript : MonoBehaviour {
         }
     }
 
-    private void HandleObjectPooling(){
+    Vector3 getNextPosition()
+    {
+        numGenerated++;
+        float x = (Random.value - 0.5f) * spreadHorizontal; // random horizontal placement
+        float y = (Mathf.PerlinNoise(x * 0.1f, numGenerated * 0.1f) - 0.5f) * spreadVertical; // smoothes out incline/decline
+        return new Vector3(x, y, numGenerated * platformDist);
+    }
+
+    private void HandleObjectPooling()
+    {
         for (int i = 0; i < poolSize; i++)
         {
             if (!platformList[i].activeInHierarchy)
             {
-                float x = (Random.value - 0.5f) * spreadHorizontal; // random horizontal placement
-                float y = (Mathf.PerlinNoise(x * 0.1f, posZ * 0.01f) - 0.5f) * spreadVertical; // smoothes out incline/decline
-                platformList[i].transform.position = new Vector3(x, y, posZ += 15);
+                platformList[i].transform.position = platformPositions[i];
                 platformList[i].SetActive(true);
                 break;
             }
@@ -66,24 +90,28 @@ public class TowersScript : MonoBehaviour {
 
         for (int i = 0; i < poolSize; i++)
         {
-            if (platformList[i].transform.position.z < GameObject.Find("Cube").transform.position.z - 50) // remove platform after player has gone 50units past it
+            if (platformList[i].transform.position.z < GameObject.Find("Cube").transform.position.z - 50) // remove platform after player has gone 50 units past it
             {
+                platformPositions[i] = getNextPosition();
                 platformList[i].SetActive(false);
             }
         }
     }
 
-    private void RemovePlatforms(){
-        for (int i = 0; i < poolSize; i++){
+    private void RemovePlatforms()
+    {
+        for (int i = 0; i < poolSize; i++)
+        {
             Destroy(platformList[i]);
         }
     }
 
-    public void Reset(){
+    public void Reset()
+    {
+        numGenerated = 0;
         RemovePlatforms();
         InitPlatforms();
         score = 0;
         GameObject.Find("Score").GetComponent<UnityEngine.UI.Text>().text = score.ToString();
-        posZ = 0;
     }
 }
