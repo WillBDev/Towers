@@ -55,6 +55,8 @@
     <Compile Include="Assets\CameraMovementScript.cs" />
     <Compile Include="Assets\CharacterController.cs" />
     <Compile Include="Assets\EndGameChecker.cs" />
+    <Compile Include="Assets\GroundScript.cs" />
+    <Compile Include="Assets\RoadGenerator.cs" />
     <Compile Include="Assets\TowersScript.cs" />
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

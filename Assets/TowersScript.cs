@@ -13,6 +13,7 @@ public class TowersScript : MonoBehaviour
     public int spreadVertical = 10;
     public int poolSize = 100;
     public int platformDist = 15;
+    private int virtualScore;
     private int score;
     List<GameObject> platformList;
     List<Vector3> platformPositions;
@@ -59,11 +60,19 @@ public class TowersScript : MonoBehaviour
     {
         for (int i = 0; i < poolSize; i++)
         {
-            if (platformList[score].transform.position.z < GameObject.Find("Cube").transform.position.z - 5) // remove platform after player has gone 5 units past it
+            if (platformList.Count > virtualScore)
             {
-                score++;
-                var scoreItem = GameObject.Find("Score").GetComponent<UnityEngine.UI.Text>();
-                scoreItem.text = score.ToString();
+                if (platformList[virtualScore].transform.position.z < GameObject.Find("Cube").transform.position.z - 5) // remove platform after player has gone 5 units past it
+                {
+                    virtualScore++;
+                    score++;
+                    var scoreItem = GameObject.Find("Score").GetComponent<UnityEngine.UI.Text>();
+                    scoreItem.text = score.ToString();
+                }
+            }
+            else
+            {
+                virtualScore = 0;
             }
         }
     }
@@ -112,6 +121,7 @@ public class TowersScript : MonoBehaviour
         RemovePlatforms();
         InitPlatforms();
         score = 0;
+        virtualScore = 0;
         GameObject.Find("Score").GetComponent<UnityEngine.UI.Text>().text = score.ToString();
     }
 }
