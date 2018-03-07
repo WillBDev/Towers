@@ -15,7 +15,7 @@ public class EndGameChecker : MonoBehaviour {
             GameObject.Find("Cube").GetComponent<CharacterController>().Reset();
             GameObject.Find("Terrain").GetComponent<TowersScript>().Reset();
             GameObject.Find("Terrain").GetComponent<RoadGenerator>().Reset();
-            GameObject.Find("Main Camera").GetComponent<CameraMovementScript>().Reset();
+            GameObject.Find("Main Camera").GetComponent<CameraReset>().Reset();
         }
 	}
 }

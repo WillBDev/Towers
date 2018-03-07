@@ -14,7 +14,7 @@ public class TowersScript : MonoBehaviour
     public int poolSize = 100;
     public int platformDist = 15;
     private int virtualScore;
-    private int score;
+    public float score;
     List<GameObject> platformList;
     List<Vector3> platformPositions;
 

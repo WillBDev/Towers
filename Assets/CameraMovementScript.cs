@@ -14,7 +14,7 @@ public class CameraMovementScript : MonoBehaviour
     void Start()
     {
         Vector3 temp = GameObject.Find("Cube").transform.position;
-        startPos = new Vector3(temp.x, temp.y + 5.5f, temp.z - 11f);
+        //startPos = new Vector3(temp.x, temp.y + 5.5f, temp.z - 11f);
     }
 
     // Update is called once per frame

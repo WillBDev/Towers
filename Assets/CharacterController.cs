@@ -6,6 +6,8 @@ public class CharacterController : MonoBehaviour {
 
     public float speed;
     public float jumpVelocity;
+    private float startSpeed;
+    private float startJump;
 
     public Vector3 startPos;
 
@@ -26,6 +28,8 @@ public class CharacterController : MonoBehaviour {
         transform.position = startPos;
 
         jumpSoundSource.clip = jumpSound;
+        startSpeed = speed;
+        startJump = jumpVelocity;
 
 	}
 	
@@ -37,7 +41,7 @@ public class CharacterController : MonoBehaviour {
 	}
 
     private void HandleMovement(){
-        body.velocity += transform.forward * Input.GetAxis("Vertical") * speed;
+        //body.velocity += transform.forward * Input.GetAxis("Vertical") * speed;
         body.velocity += transform.right * Input.GetAxis("Horizontal") * speed;
     }
 
@@ -57,6 +61,8 @@ public class CharacterController : MonoBehaviour {
     public void Reset()
     {
         transform.position = startPos;
+        speed = startSpeed;
+        jumpVelocity = startJump;
         body.velocity = Vector3.zero;
         canJump = true;
     }
