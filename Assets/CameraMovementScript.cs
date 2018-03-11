@@ -20,15 +20,7 @@ public class CameraMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.Find("Cube").transform.position.z > transform.position.z + maxDistance)
-        {
-            //is player to far away, speed up camera
-            transform.position = new Vector3(transform.position.x, transform.position.y,GameObject.Find("Cube").transform.position.z - maxDistance);
-        }
-        else //regular; move camera
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + int.Parse(GameObject.Find("Score").GetComponent<UnityEngine.UI.Text>().text) * Time.deltaTime);
-        }
+        transform.position = new Vector3(transform.position.x, transform.position.y,GameObject.Find("Cube").transform.position.z - maxDistance);
     }
 
     public void Reset()

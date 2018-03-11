@@ -11,7 +11,7 @@ public class EndGameChecker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(GameObject.Find("Cube").transform.position.y < -5){
+        if(GameObject.Find("Cube").transform.position.y <= 5){
             GameObject.Find("Cube").GetComponent<CharacterController>().Reset();
             GameObject.Find("Terrain").GetComponent<TowersScript>().Reset();
             GameObject.Find("Terrain").GetComponent<RoadGenerator>().Reset();
