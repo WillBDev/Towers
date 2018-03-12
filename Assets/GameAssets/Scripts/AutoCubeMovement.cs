@@ -9,7 +9,7 @@ public class AutoCubeMovement : MonoBehaviour
     public Rigidbody rb;
     CharacterController controller;
     float score;
-  
+
     float tempScore; //store previous score
 
     public float speedIncrement; //increase speed by this number every time
@@ -22,9 +22,7 @@ public class AutoCubeMovement : MonoBehaviour
 
         GameObject terrain = GameObject.Find("Terrain");
         towerScript = terrain.GetComponent<TowersScript>();
-
-        GameObject cube = GameObject.Find("Cube");
-        controller = cube.GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
 
         //speedIncrement = 0.25f;
         //jumpIncrement = 0.25f;
@@ -34,13 +32,13 @@ public class AutoCubeMovement : MonoBehaviour
     //// Update is called once per frame
     void FixedUpdate()
     {
-        
-        score = towerScript.score;    
+
+        score = towerScript.score;
         if (score % levelIncrement == 0 && score != 0 && tempScore != score)
         {
             controller.speed += speedIncrement;
             controller.jumpVelocity -= jumpIncrement;
-       
+
         }
 
         rb.MovePosition(transform.position + transform.forward * controller.speed * Time.deltaTime);
