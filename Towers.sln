@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio for Mac
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Towers", "Towers.csproj", "{7F6073FF-394B-0873-37BC-2A28613CC54F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Towers.Editor.Plugins", "Towers.Editor.Plugins.csproj", "{E462037F-3943-4044-94F1-AE388F165A6B}"

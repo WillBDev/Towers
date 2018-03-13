@@ -14,8 +14,7 @@ public class TowersScript : MonoBehaviour
     public int poolSize = 100;
     public int platformDist = 15;
     private int virtualScore;
-    public int score;
-    private int bestScore = 0;
+    public float score;
     List<GameObject> platformList;
     List<Vector3> platformPositions;
 
@@ -63,13 +62,12 @@ public class TowersScript : MonoBehaviour
         {
             if (platformList.Count > virtualScore)
             {
-                if (platformList[virtualScore].transform.position.z < GameObject.Find("Cube").transform.position.z - 5 && GameObject.Find("Cube").transform.position.y > 5) // remove platform after player has gone 5 units past it
+                if (platformList[virtualScore].transform.position.z < GameObject.Find("Cube").transform.position.z - 5) // remove platform after player has gone 5 units past it
                 {
                     virtualScore++;
                     score++;
-                    var scoreItem = GameObject.Find("Score_Text").GetComponent<UnityEngine.UI.Text>();
+                    var scoreItem = GameObject.Find("Score").GetComponent<UnityEngine.UI.Text>();
                     scoreItem.text = score.ToString();
-                    Debug.Log(scoreItem);
                 }
             }
             else
@@ -122,13 +120,8 @@ public class TowersScript : MonoBehaviour
         numGenerated = 0;
         RemovePlatforms();
         InitPlatforms();
-        if (score > bestScore)
-        {
-            bestScore = score;
-        }
         score = 0;
         virtualScore = 0;
-        GameObject.Find("Best_Score_Text").GetComponent<UnityEngine.UI.Text>().text = bestScore.ToString();
-        GameObject.Find("Score_Text").GetComponent<UnityEngine.UI.Text>().text = score.ToString();
+        GameObject.Find("Score").GetComponent<UnityEngine.UI.Text>().text = score.ToString();
     }
 }
