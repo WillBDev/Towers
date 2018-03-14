@@ -32,7 +32,7 @@ public class AutoCubeMovement : MonoBehaviour
     //// Update is called once per frame
     void FixedUpdate()
     {
-
+     
         score = towerScript.score;
         if (score % levelIncrement == 0 && score != 0 && tempScore != score)
         {
@@ -44,6 +44,7 @@ public class AutoCubeMovement : MonoBehaviour
         rb.MovePosition(transform.position + transform.forward * controller.speed * Time.deltaTime);
         tempScore = score;
     }
+
 
 
 }

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EndGameChecker : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
-		
+        
 	}
 	
 	// Update is called once per frame
@@ -16,6 +17,8 @@ public class EndGameChecker : MonoBehaviour {
             GameObject.Find("Terrain").GetComponent<TowersScript>().Reset();
             GameObject.Find("Terrain").GetComponent<RoadGenerator>().Reset();
             GameObject.Find("Main Camera").GetComponent<CameraReset>().Reset();
+            GameObject.Find("General UI Script").GetComponent<GeneralUIScript>().deathScreen.SetActive(true);
+            GameObject.Find("General UI Script").GetComponent<GeneralUIScript>().player.SetActive(false);
         }
 	}
 }
