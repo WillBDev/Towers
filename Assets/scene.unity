@@ -147,7 +147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -95, y: -145}
+  m_AnchoredPosition: {x: -95, y: -130}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &13165631
@@ -1629,6 +1629,7 @@ MonoBehaviour:
   deathScreen: {fileID: 0}
   mainMenu: {fileID: 0}
   player: {fileID: 0}
+  gameUI: {fileID: 0}
 --- !u!224 &415328955
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1980,7 +1981,7 @@ GameObject:
   - component: {fileID: 504455704}
   - component: {fileID: 504455703}
   m_Layer: 5
-  m_Name: Final Score
+  m_Name: Final_Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2792,7 +2793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 95, y: -145}
+  m_AnchoredPosition: {x: 95, y: -130}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1045074618
@@ -3040,7 +3041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1088808287
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3208,7 +3209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jumpVelocity: 15
-  startPos: {x: 0, y: 10.5, z: 0}
+  startPos: {x: 0, y: 10.5, z: -5}
   jumpSound: {fileID: 8300000, guid: 049c58b3fc1701b4983468656c8250ef, type: 3}
   jumpSoundSource: {fileID: 1240354017}
 --- !u!114 &1140669985
