@@ -69,7 +69,6 @@ public class TowersScript : MonoBehaviour
                     score++;
                     var scoreItem = GameObject.Find("Score_Text").GetComponent<UnityEngine.UI.Text>();
                     scoreItem.text = score.ToString();
-                    Debug.Log(scoreItem);
                 }
             }
             else
@@ -125,6 +124,11 @@ public class TowersScript : MonoBehaviour
         if (score > bestScore)
         {
             bestScore = score;
+        }
+
+        if (GameObject.Find("General UI Script").GetComponent<GeneralUIScript>().deathScreen.active)
+        {
+            GameObject.Find("Final_Score").GetComponent<UnityEngine.UI.Text>().text = score.ToString();   
         }
         score = 0;
         virtualScore = 0;
